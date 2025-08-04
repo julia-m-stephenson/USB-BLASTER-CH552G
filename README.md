@@ -1,2 +1,46 @@
 # USB-BLASTER-CH552G
 Reverse Engineering the Cheap USB-Blaster
+
+I bought one for the cheapest USB-Blaster clones from Aliexpress.
+
+Unfortunately it didn't support 5V and probably didn't work on 3V3 as the firmware is a bit suspect.
+
+I have reverse engineered the schematic tha is in folder usb_blaster_ch552g (see also usb_blaster_ch552g.pdf)
+
+I modifed the schematic so the board will work with 5V devices (only) see usb_blaster_ch552g_5V (and usb_blaster_ch552g_5V.pdf)
+
+Unfortunatel this didn't connect to the Atera Device I wanted to use - EPM7128SLC.
+
+I found some new firmware created by Doug (https://www.downtowndougbrown.com/2024/06/fixing-a-knockoff-altera-usb-blaster-that-never-worked/)
+
+A copy is provided in directory firmware for your convenience.
+
+The open source tools did not work for me but luckily the manufacturer provided tools worked great under Windows 10.
+
+I think this is because the CH552G bootloader only listens for host traffic for a short time before jumping into the firmware already loaded.
+
+To get this to work I followed these instructions from "KUKUS" yo will see them at the very bottom of Dougs's page linked above
+NOTE: My 5V change keeps 3V3 on the programming header which is needed for the 10K resistor link.
+
+They are :-
+KUKUS @ 2025-06-16 15:04
+
+Only for chinese CH552G Usb blaster clones:
+https://www.aliexpress.com/item/1005006124786647.html
+for Windows 10 users:
+– install CH375_DRIVER (CH372DRV.EXE from WCH website)
+-! driver CH372DRV.EXE can be renamed CH372DRV.CAB and files be extracted with Winzip/RAR etc.!
+– open plastic case, add 10k resistor between D+ and 3V3
+– install WCHISP_Tool3.3 or latest WCHISP_Studio (better!) (WCH website)
+– if device not detected update driver from via Device_Manager using driver files from extracted .CAB
+– make sure to select CH55x/USB chip model CH552
+– Object File1 = load the usb_blaster.bin file here and check box on the right
+– Make sure “Enable RST Pin as manual reset pin” and “Run the Taget Program …” are NOT checked !
+
+IMPORTANT!!
+– ! Make sure “Automatic Download When Device Connect” is CHECKED !
+– insert device on USB2.0 port.
+– it will automatically download usb_blaster.bin file in device flash memory
+– remove 10k resistor from D+ and 3v3
+– Plug in USB => You now have a fully functional “Altera USB Blaster Device” 🙂
+Tested and working in Quartus Standard 24.1 as per 2025 😉
