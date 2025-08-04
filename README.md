@@ -2,12 +2,13 @@
 Reverse Engineering the Cheap USB-Blaster
 
 I bought one for the cheapest USB-Blaster clones from Aliexpress.
-
+![CheapPix](/images/CHEAPO.jpg)
 Unfortunately it didn't support 5V and probably didn't work on 3V3 as the firmware is a bit suspect.
 
 I have reverse engineered the schematic tha is in folder usb_blaster_ch552g (see also usb_blaster_ch552g.pdf)
 
 I modifed the schematic so the board will work with 5V devices (only) see usb_blaster_ch552g_5V (and usb_blaster_ch552g_5V.pdf)
+![CheapPix](/images/CHEAPO_5V.jpg)
 
 Unfortunatel this didn't connect to the Atera Device I wanted to use - EPM7128SLC.
 
