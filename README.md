@@ -1,7 +1,7 @@
 # USB-BLASTER-CH552G
 Reverse Engineering the Cheap USB-Blaster<br/>
 <br/>
-I bought one for the cheapest USB-Blaster clones from Aliexpress.<br/>
+I bought one of the cheapest USB-Blaster clones from Aliexpress. I know, I'm cheap lol<br/>
 ![CheapPix](/images/CHEAPO.jpg)
 Unfortunately it didn't support 5V and probably didn't work on 3V3 as the firmware is a bit suspect.<br/>
 <br/>
