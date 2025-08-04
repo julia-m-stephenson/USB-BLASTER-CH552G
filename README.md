@@ -14,7 +14,8 @@ I modifed the schematic so the board will work with 5V devices (only) see usb_bl
 ![CheapPix](/images/CHEAPO_5V.jpg)
 
 
-Basically lift pin 15 and connect to F1 (5V), remove the 3v3 regulator. Ignore the wire on PIN 16 that was a failed experiment. 
+Basically lift pin 15 and connect to F1 (5V) and remove the 3v3 regulator (U1). 
+Ignore the wire on PIN 16 that was a failed experiment. 
 This change runs the MCU on 5V and uses its internal 3V3 regulator (pin 16) to drive the LEDs and power for the 10K programming resistor.
 
 Unfortunately this still didn't connect to the Atera Device I wanted to use - EPM7128SLC, EPM7064SLC.
