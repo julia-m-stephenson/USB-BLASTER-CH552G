@@ -5,7 +5,7 @@ I bought one for the cheapest USB-Blaster clones from Aliexpress.
 ![CheapPix](/images/CHEAPO.jpg)
 Unfortunately it didn't support 5V and probably didn't work on 3V3 as the firmware is a bit suspect.
 
-I have reverse engineered the schematic that is in folder usb_blaster_ch552g (see also usb_blaster_ch552g.pdf)
+The reverse engineered schematic is in folder usb_blaster_ch552g (see also usb_blaster_ch552g.pdf)
 This also required adding a CH552G symbol to https://github.com/julia-m-stephenson/wch-kicad-lbr
 
 Find the data sheets in docs directory.
@@ -14,17 +14,17 @@ I modifed the schematic so the board will work with 5V devices (only) see usb_bl
 ![CheapPix](/images/CHEAPO_5V.jpg)
 
 
-Basically lift pin 15 and connect to F1 (5V) ignore the wire on PIN 16 that was a failed experiment. 
+Basically lift pin 15 and connect to F1 (5V), remove the 3v3 regulator. Ignore the wire on PIN 16 that was a failed experiment. 
 This change runs the MCU on 5V and uses its internal 3V3 regulator (pin 16) to drive the LEDs and power for the 10K programming resistor.
 
-Unfortunately this still didn't connect to the Atera Device I wanted to use - EPM7128SLC.
+Unfortunately this still didn't connect to the Atera Device I wanted to use - EPM7128SLC, EPM7064SLC.
 
 I found some new firmware created by Doug (https://www.downtowndougbrown.com/2024/06/fixing-a-knockoff-altera-usb-blaster-that-never-worked/)
 
 A copy is provided in directory firmware for your convenience.
 
 The open source tools did not work for me but luckily the manufacturer provided tools worked great under Windows 10.
-A copy of the WCH programming tool is in tools directory along with a driver which I don't think you need.
+A copy of the WCH programming tool is in the tools directory along with a driver which I don't think you need.
 
 I think the open source tools fail because the CH552G bootloader only listens for host traffic for a short time before jumping into the firmware already loaded.
 
